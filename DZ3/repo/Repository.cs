@@ -6,14 +6,14 @@ namespace DZ3.repo
 	{
 		public void Repo(List<string> person)
 		{
-            // Не могу понять как без принудительного указания пути вновь
-            // созданный файл появлялся в solution, вариант пути указанный ниже сохраняет файлв в папке bin\Debug\net7.0
+            // Не могу понять как без принудительного указания пути для вновь
+			// создаваемого файла отразить его в solution
+            // если указать только наименование файл то он 
+			// сохраняется в папке bin\Debug\net7.0
             // подскажите как правильно указать путь
-            try
+            string path = ("/Users/maksimmakarov/Desktop/GB/Исключения в программировании и их обработка/DZ/DZ3/DZ3/" + person[0] + ".txt");
+			try
             {
-                string path = Path.Combine(Path.GetDirectoryName(Assembly.
-				GetExecutingAssembly().Location),person[0] + ".txt");
-
 				using (StreamWriter sw = new StreamWriter(path,true))
 				{
 					for (int i = 0; i < person.Count; i++)
